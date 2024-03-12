@@ -60,6 +60,4 @@ For a controlled environment with a relatively small search space, the determini
 
 
 ## Contributors
-
-Peiyu Zhong
-Kelsey Zeng
+Peiyu Zhong, Kelsey Zeng
