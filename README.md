@@ -1,5 +1,5 @@
-# Large Scale Data Processing: Project 1
-## Understanding Git
+# Large Scale Data Processing: Project 1 Report
+## 
 If you're unfamiliar with version control systems, especially Git, please consult the [Git Handbook](https://guides.github.com/introduction/git-handbook/) and some of the additional resources it provides.
 
 ## Setting up your local environment
