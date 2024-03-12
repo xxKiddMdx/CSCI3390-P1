@@ -2,6 +2,8 @@
 
 This project involves developing and executing a program to find a nonce that, when hashed with a given input string, results in a hash that meets a certain difficulty level. The difficulty is defined by the number of leading zeros in the hash output. This report summarizes the findings of running the program with various difficulty levels on both a local machine and Google Cloud Platform (GCP).
 
+Contributors: Pei
+
 ## Local Machine Results
 
 The program was run on a local machine with different difficulty levels (`k`) and number of trials (`n`). Below are the results for each run:
@@ -13,6 +15,7 @@ The program was run on a local machine with different difficulty levels (`k`) an
 | 4                | 100,000                | 1749980439           | 00001ab43ec613c65ff2e9235ef2b15691c7bf3052c60239e4adaf23ac2055d2 | 1                |
 | 5                | 1,000,000              | 1898532701           | 00000ab037336a5b2f0dbc6480b88e653db4f32981fd7f2691140337cc48e762 | 2                |
 | 6                | 10,000,000             | 63370624             | 000000fa1a20128cf92d1e54dd4ea19246272c448dcfda8c3df87d49a7a23be4 | 4                |
+
 
 ## GCP Results
 
@@ -49,6 +52,14 @@ Based on initial tests and performance benchmarks conducted on a local machine a
 
 ## Efficiency Discussion: Deterministic vs. Randomized Nonce Generation
 
-The deterministic approach is more efficient in terms of ensuring complete coverage of the search space without duplication of effort. It's predictable and systematically exhaustive. This makes it preferable for problems where the solution is expected to be found within a manageable number of tries or when running the process in a tightly controlled environment.
+*The deterministic approach* is more efficient in terms of ensuring complete coverage of the search space without duplication of effort. It's predictable and systematically exhaustive. This makes it preferable for problems where the solution is expected to be found within a manageable number of tries or when running the process in a tightly controlled environment.
 
-The randomized approach could be more "efficient" in practice for distributed systems or very large search spaces because it allows different nodes or instances to explore the search space independently without coordination, reducing the chance of overlap. However, its efficiency is subject to variance and luck due to its random nature.
+*The randomized approach* could be more "efficient" in practice for distributed systems or very large search spaces because it allows different nodes or instances to explore the search space independently without coordination, reducing the chance of overlap. However, its efficiency is subject to variance and luck due to its random nature.
+
+For a controlled environment with a relatively small search space, the deterministic method is more efficient and straightforward. In contrast, for large, distributed systems with vast search spaces, the randomized method may offer practical advantages.
+
+
+## Contributors
+
+Peiyu Zhong
+Kelsey Zeng
