@@ -2,7 +2,6 @@
 
 This project involves developing and executing a program to find a nonce that, when hashed with a given input string, results in a hash that meets a certain difficulty level. The difficulty is defined by the number of leading zeros in the hash output. This report summarizes the findings of running the program with various difficulty levels on both a local machine and Google Cloud Platform (GCP).
 
-Contributors: Pei
 
 ## Local Machine Results
 
