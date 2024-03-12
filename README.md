@@ -40,13 +40,15 @@ The GCP cluster used to solve the case `k = 7` had the following configuration:
 - **Created On:** March 12, 2024, at 3:22:35 PM
 - **Encryption Type:** Google-managed
 
-This configuration indicates that the cluster consisted of a single master node without additional worker nodes, which implies that the computation was carried out by the master node alone.
+This configuration indicates that the cluster consisted of a single master node without additional worker nodes.
 
 ### Estimating the Number of Trials
 
-Given the configuration of the master node as `n2-standard-4`, the number of trials needed to find a suitable nonce for `k = 7` was set to 100,000,000 based on preliminary testing and performance benchmarks. The decision to use this number of trials takes into account the processing capabilities of the machine type and the probabilistic nature of finding a hash with the desired number of leading zeros.
+Based on initial tests and performance benchmarks conducted on a local machine across varying difficulty levels, we determined that an n2-standard-4 master node could feasibly compute 100,000,000 trials to find a suitable nonce for k = 7. This decision was informed by the node’s computational capacity and the extrapolated difficulty curve from previous local runs.
 
 
-## Conclusion
+## Efficiency Discussion: Deterministic vs. Randomized Nonce Generation
 
-The experiment demonstrates the computational effort required to find nonces that satisfy increasing difficulty levels in a simulated blockchain environment. The local machine could efficiently handle up to `k = 6`, while GCP was used to address the more demanding case of `k = 7`, showcasing the scalability and computational power offered by cloud computing platforms.
+The deterministic approach is more efficient in terms of ensuring complete coverage of the search space without duplication of effort. It's predictable and systematically exhaustive. This makes it preferable for problems where the solution is expected to be found within a manageable number of tries or when running the process in a tightly controlled environment.
+
+The randomized approach could be more "efficient" in practice for distributed systems or very large search spaces because it allows different nodes or instances to explore the search space independently without coordination, reducing the chance of overlap. However, its efficiency is subject to variance and luck due to its random nature.
